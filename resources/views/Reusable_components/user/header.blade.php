@@ -30,9 +30,27 @@
             <div class="col-4 d-flex align-items-center justify-content-end">
                 <a class="text-decoration-none text-body-emphasis"><i class="bi bi-search"></i>
                 </a>
-                <a class="btn btn-sm btn-outline-secondary mx-1" href="/register">Sign up</a>
-                <a class="btn btn-sm btn-outline-secondary mx-1" href="/login">Log in</a>
-
+                @auth
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-sm btn-outline-secondary mx-1 nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            My Account
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+                            <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                            <li><a class="dropdown-item" href="/blog">Blogs</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <a href="/logout" class="btn btn-danger m-2">log out</a>
+                        </ul>
+                    </li>
+                @endauth
+                @guest
+                    <a class="btn btn-sm btn-outline-secondary mx-1" href="/register">Sign up</a>
+                    <a class="btn btn-sm btn-outline-secondary mx-1" href="/login">Log in</a>
+                @endguest
             </div>
         </div>
 

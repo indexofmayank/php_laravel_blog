@@ -10,12 +10,20 @@
                 <label for="email">Email</label>
                 <input id="email" type="email" class="form-control" name="email" required autofocus>
             </div>
-
+            @error('email')
+                <span class="invalid-feedback d-block" role="alert">
+                    <strong>{{$message}}</strong>
+                </span>
+            @enderror
             <div class="form-group mb-3">
                 <label for="password">Password</label>
                 <input id="password" type="password" class="form-control" name="password" required>
             </div>
-
+            @error('password')
+                <span class="invalid-feedback d-block" role="alert">
+                    <strong>{{$message}}</strong>
+                </span>
+            @enderror
             <div class="d-flex justify-content-between mb-3">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="remember" id="remember">
